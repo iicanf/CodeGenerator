@@ -1,4 +1,4 @@
-package ${basePackage}.dao;
+package com.iicanf.dao;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
@@ -7,7 +7,7 @@ import java.util.List;
 import org.apache.ibatis.exceptions.TooManyResultsException;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import ${basePackage}.dao.MyMapper;
+import com.iicanf.dao.MyMapper;
 
 import tk.mybatis.mapper.entity.Condition;
 

@@ -1,13 +1,15 @@
-package ${basePackage}.dao;
+package com.iicanf.service;
 
+import org.apache.ibatis.exceptions.TooManyResultsException;
 import tk.mybatis.mapper.entity.Condition;
+
 import java.util.List;
 
 /**
- * Dao 层 基础接口，其他Dao 接口 请继承该接口
- * Created by ${author} on ${date}
+ * Service 层 基础接口，其他Service 接口 请继承该接口
+ * Created by iicanf on 2018/08/08
  */
-public interface Dao<T> {
+public interface Service<T> {
 	
 	/**
 	 * 插入数据

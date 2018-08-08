@@ -1,11 +1,11 @@
-package ${basePackage}.dao;
+package com.iicanf.dao;
 
 import tk.mybatis.mapper.entity.Condition;
 import java.util.List;
 
 /**
  * Dao 层 基础接口，其他Dao 接口 请继承该接口
- * Created by ${author} on ${date}
+ * Created by iicanf on 2018/08/08
  */
 public interface Dao<T> {
 	

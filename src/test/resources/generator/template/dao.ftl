@@ -1,18 +1,18 @@
 <#if tableSingEnable == true>
-package ${basePackage}.service.${sign};
+package ${basePackage}.dao.${sign};
 
 import ${basePackage}.model.${sign}.${modelNameUpperCamel};
 <#else>
-package ${basePackage}.service;
+package ${basePackage}.dao;
 
 import ${basePackage}.model.${modelNameUpperCamel};
 </#if>
-import ${basePackage}.service.Service;
+import ${basePackage}.dao.Dao;
 
 /**
  *
  * Created by ${author} on ${date}.
  */
-public interface ${modelNameUpperCamel}Service extends Service<${modelNameUpperCamel}> {
+public interface ${modelNameUpperCamel}Dao extends Dao<${modelNameUpperCamel}> {
 
 }

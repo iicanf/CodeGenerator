@@ -8,6 +8,7 @@ import org.apache.ibatis.exceptions.TooManyResultsException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import ${basePackage}.dao.MyMapper;
+import ${basePackage}.dao.Dao;
 
 import tk.mybatis.mapper.entity.Condition;
 
@@ -17,7 +18,7 @@ import tk.mybatis.mapper.entity.Condition;
 public abstract class AbstractService<T> {
 
     @Autowired
-    protected dao<T> mapper;
+    protected Dao<T> dao;
 
     private Class<T> modelClass;    // 当前泛型真实类型的Class
 
@@ -26,52 +27,39 @@ public abstract class AbstractService<T> {
         modelClass = (Class<T>) pt.getActualTypeArguments()[0];
     }
 
-    public int save(T model) {
-        return mapper.insertSelective(model);
+     public int save(T model) {
+        return dao.save(model);
     }
 
     public int save(List<T> models) {
-        return mapper.insertList(models);
+        return dao.save(models);
     }
 
     public int deleteById(Integer id) {
-        return mapper.deleteByPrimaryKey(id);
+        return dao.deleteById(id);
     }
 
     public int deleteByIds(String ids) {
-        return mapper.deleteByIds(ids);
+        return dao.deleteByIds(ids);
     }
 
     public int update(T model) {
-        return mapper.updateByPrimaryKeySelective(model);
+        return dao.update(model);
     }
 
     public T findById(Integer id) {
-        return mapper.selectByPrimaryKey(id);
-    }
-
-    @SuppressWarnings("unchecked")
-	public T findBy(String fieldName, Object value) throws TooManyResultsException {
-        try {
-            T model = modelClass.newInstance();
-            Field field = modelClass.getDeclaredField(fieldName);
-            field.setAccessible(true);
-            field.set(model, value);
-            return mapper.selectOne(model);
-        } catch (ReflectiveOperationException e) {
-            throw new RuntimeException("查询操作异常!");
-        }
+        return dao.findById(id);
     }
 
     public List<T> findByIds(String ids) {
-        return mapper.selectByIds(ids);
+        return dao.findByIds(ids);
     }
 
     public List<T> findByCondition(Condition condition) {
-        return mapper.selectByCondition(condition);
+        return dao.findByCondition(condition);
     }
 
     public List<T> findAll() {
-        return mapper.selectAll();
+        return dao.findAll();
     }
 }

@@ -1,27 +1,26 @@
 <#if tableSingEnable == true>
-package ${basePackage}.service.impl.${sign};
+package ${basePackage}.dao.impl.${sign};
 
 import ${basePackage}.dao.mapper.${sign}.${modelNameUpperCamel}Mapper;
 import ${basePackage}.model.${sign}.${modelNameUpperCamel};
-import ${basePackage}.service.${sign}.${modelNameUpperCamel}Service;
+import ${basePackage}.dao.${sign}.${modelNameUpperCamel}Dao;
 <#else>
-package ${basePackage}.service.impl;
+package ${basePackage}.dao.impl;
 
 import ${basePackage}.dao.mapper.${modelNameUpperCamel}Mapper;
 import ${basePackage}.model.${modelNameUpperCamel};
-import ${basePackage}.service.${modelNameUpperCamel}Service;
+import ${basePackage}.dao.${modelNameUpperCamel}Dao;
 </#if>
-
-import ${basePackage}.service.AbstractService;
-import org.springframework.stereotype.Service;
+import ${basePackage}.dao.AbstractDao;
+import org.springframework.stereotype.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  *
  * Created by ${author} on ${date}.
  */
-@Service
-public class ${modelNameUpperCamel}ServiceImpl extends AbstractService<${modelNameUpperCamel}> implements ${modelNameUpperCamel}Service {
+@Repository
+public class ${modelNameUpperCamel}DaoImpl extends AbstractDao<${modelNameUpperCamel}> implements ${modelNameUpperCamel}Dao {
 
     @Autowired
     private ${modelNameUpperCamel}Mapper ${modelNameLowerCamel}Mapper;

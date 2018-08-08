@@ -105,6 +105,8 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
         new MyMapperGenerator().genCode(null, null, null);
         new AbstractServiceGenerator().genCode(null, null, null);
         new ServiceInterfaceGenerator().genCode(null, null, null);
+        new DaoInterfaceGenerator().genCode(null, null, null);
+        new AbstractDaoGenerator().genCode(null, null, null);
     }
 
     /**
@@ -237,6 +239,7 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
             modelName = getDefModelName(tableName);
         }
         new ModelAndMapperGenerator().genCode(tableName, modelName, sign);
+        new DaoGenerator().genCode(tableName, modelName, sign);
         new ServiceGenerator().genCode(tableName, modelName, sign);
         new ControllerGenerator().genCode(tableName, modelName, sign);
     }
@@ -302,6 +305,7 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
         MODEL_PACKAGE = prop.getProperty("model.package");
         MAPPER_PACKAGE = prop.getProperty("mapper.package");
         DAO_PACKAGE = prop.getProperty("dao.package");
+        DAO_IMPL_PACKAGE = prop.getProperty("dao.impl.package");
         SERVICE_PACKAGE = prop.getProperty("service.package");
         SERVICE_IMPL_PACKAGE = prop.getProperty("service.impl.package");
         CONTROLLER_PACKAGE = prop.getProperty("controller.package");
@@ -314,11 +318,13 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
         String serviceImplPackage = prop.getProperty("package.path.service.impl");
         String controllerPackage = prop.getProperty("package.path.controller");
         String daoPackage = prop.getProperty("package.path.dao");
+        String daoImplPackage = prop.getProperty("package.path.dao.impl");
 
         PACKAGE_PATH_SERVICE = "".equals(servicePackage) ? packageConvertPath(SERVICE_PACKAGE) : servicePackage;
         PACKAGE_PATH_SERVICE_IMPL = "".equals(serviceImplPackage) ? packageConvertPath(SERVICE_IMPL_PACKAGE) : serviceImplPackage;
         PACKAGE_PATH_CONTROLLER = "".equals(controllerPackage) ? packageConvertPath(CONTROLLER_PACKAGE) : controllerPackage;
         PACKAGE_PATH_DAO = "".equals(daoPackage) ? packageConvertPath(DAO_PACKAGE) : daoPackage;
+        PACKAGE_PATH_DAO_IMPL = "".equals(daoImplPackage) ? packageConvertPath(DAO_IMPL_PACKAGE) : daoImplPackage;
 
 
         AUTHOR = prop.getProperty("author");
