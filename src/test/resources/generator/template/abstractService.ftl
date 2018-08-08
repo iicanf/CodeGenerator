@@ -17,7 +17,7 @@ import tk.mybatis.mapper.entity.Condition;
 public abstract class AbstractService<T> {
 
     @Autowired
-    protected MyMapper<T> mapper;
+    protected dao<T> mapper;
 
     private Class<T> modelClass;    // 当前泛型真实类型的Class
 
