@@ -26,6 +26,8 @@ public class CodeGeneratorConfig {
 	protected static String MODEL_PACKAGE;
 	// 项目 Mapper 所在包
 	protected static String MAPPER_PACKAGE;
+	// 项目 Mapper 所在包
+	protected static String DAO_PACKAGE;
 	// 项目 Service 所在包
 	protected static String SERVICE_PACKAGE;
 	// 项目 Service 实现类所在包
@@ -39,6 +41,8 @@ public class CodeGeneratorConfig {
 	protected static String PACKAGE_PATH_SERVICE_IMPL;
 	// 生成的 Controller 存放路径
 	protected static String PACKAGE_PATH_CONTROLLER;
+	// 生成的 Dao 存放路径
+	protected static String PACKAGE_PATH_DAO;
 	
 	// MyMapper 插件基础接口的完全限定名
 	protected static String MAPPER_INTERFACE_REFERENCE;
@@ -51,5 +55,8 @@ public class CodeGeneratorConfig {
 	protected static String AUTHOR;
 	// 模板注释中 @date
 	protected static String DATE;
+
+	protected static String TABLE_DEFAULT_SIGN;
+	protected static boolean TABLE_SIGN_ENABLE;
 	
 }
