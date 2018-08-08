@@ -1,3 +1,6 @@
+# 说明
+fork form [zhaohaihao/CodeGenerator](https://github.com/zhaohaihao/CodeGenerator), follow are the source README:
+
 # Java代码生成器
 ## 介绍
 这是一个基于数据库表<br/>用来自动生成 Model & Mapper & Service & ServiceImpl & Controller 等代码的代码生成器<br/>
