@@ -1,5 +1,6 @@
 package com.iicanf.dao;
 
+import org.springframework.stereotype.Component;
 import tk.mybatis.mapper.entity.Condition;
 import java.util.List;
 
