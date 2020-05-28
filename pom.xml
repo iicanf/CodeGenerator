@@ -12,7 +12,7 @@
     </parent>
 
     <dependencies>
-        <!-- 日志依赖 -->
+
         <!-- Mybatis 依赖 及 插件 -->
         <!--spring-boot mybatis依赖-->
         <dependency>
@@ -35,6 +35,7 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>22.0</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.freemarker</groupId>
@@ -45,7 +46,19 @@
         <dependency>
             <groupId>org.mybatis.generator</groupId>
             <artifactId>mybatis-generator-core</artifactId>
-            <version>1.3.5</version>
+            <version>1.3.6</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper</artifactId>
+            <version>4.0.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-generator</artifactId>
+            <version>1.0.0</version>
             <scope>test</scope>
         </dependency>
         <!--MySQL JDBC驱动 -->
@@ -64,6 +77,29 @@
             <artifactId>lombok</artifactId>
             <version>1.18.10</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- 单元测试 -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- guava-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>29.0-jre</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-core</artifactId>
+            <version>5.3.5</version>
         </dependency>
     </dependencies>
 

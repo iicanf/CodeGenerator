@@ -7,6 +7,6 @@ import tk.mybatis.mapper.common.special.InsertListMapper;
 
 /**
  * 通用 Mapper, 如果被扫描到会报异常
- * Created by iicanf on 2018/08/08.
+ * Created by iicanf on 2020/05/28.
  */
 public interface MyMapper<T> extends BaseMapper<T>, ConditionMapper<T>, IdsMapper<T>, InsertListMapper<T> {}

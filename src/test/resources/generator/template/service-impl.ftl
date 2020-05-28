@@ -7,7 +7,7 @@ import ${basePackage}.service.${sign}.${modelNameUpperCamel}Service;
 <#else>
 package ${basePackage}.service.impl;
 
-import ${basePackage}.dao.${modelNameUpperCamel}Dao;
+import ${basePackage}.dao.mapper.${modelNameUpperCamel}Mapper;
 import ${basePackage}.model.${modelNameUpperCamel};
 import ${basePackage}.service.${modelNameUpperCamel}Service;
 </#if>
@@ -24,6 +24,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class ${modelNameUpperCamel}ServiceImpl extends AbstractService<${modelNameUpperCamel}> implements ${modelNameUpperCamel}Service {
 
     @Autowired
-    private ${modelNameUpperCamel}Dao ${modelNameLowerCamel}Dao;
+    private ${modelNameUpperCamel}Mapper ${modelNameLowerCamel}Mapper;
 
 }

@@ -18,7 +18,7 @@ import tk.mybatis.mapper.entity.Condition;
 public abstract class AbstractService<T> {
 
     @Autowired
-    protected Dao<T> dao;
+    protected MyMapper<T> mapper;
 
     private Class<T> modelClass;    // 当前泛型真实类型的Class
 
@@ -27,39 +27,40 @@ public abstract class AbstractService<T> {
         modelClass = (Class<T>) pt.getActualTypeArguments()[0];
     }
 
-     public int save(T model) {
-        return dao.save(model);
+    public int save(T model) {
+        return mapper.insertSelective(model);
     }
 
     public int save(List<T> models) {
-        return dao.save(models);
+        return mapper.insertList(models);
     }
 
     public int deleteById(Integer id) {
-        return dao.deleteById(id);
+        return mapper.deleteByPrimaryKey(id);
     }
 
     public int deleteByIds(String ids) {
-        return dao.deleteByIds(ids);
+        return mapper.deleteByIds(ids);
     }
 
     public int update(T model) {
-        return dao.update(model);
+        return mapper.updateByPrimaryKeySelective(model);
     }
 
     public T findById(Integer id) {
-        return dao.findById(id);
+        return mapper.selectByPrimaryKey(id);
     }
 
     public List<T> findByIds(String ids) {
-        return dao.findByIds(ids);
+        return mapper.selectByIds(ids);
     }
 
     public List<T> findByCondition(Condition condition) {
-        return dao.findByCondition(condition);
+        return mapper.selectByCondition(condition);
     }
 
     public List<T> findAll() {
-        return dao.findAll();
+        return mapper.selectAll();
     }
+
 }

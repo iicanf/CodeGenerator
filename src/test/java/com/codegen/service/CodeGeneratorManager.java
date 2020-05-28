@@ -105,8 +105,9 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
         new MyMapperGenerator().genCode(null, null, null);
         new AbstractServiceGenerator().genCode(null, null, null);
         new ServiceInterfaceGenerator().genCode(null, null, null);
-        new DaoInterfaceGenerator().genCode(null, null, null);
-        new AbstractDaoGenerator().genCode(null, null, null);
+        //移除dao层
+//        new DaoInterfaceGenerator().genCode(null, null, null);
+//        new AbstractDaoGenerator().genCode(null, null, null);
     }
 
     /**
@@ -239,6 +240,7 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
             modelName = getDefModelName(tableName);
         }
         new ModelAndMapperGenerator().genCode(tableName, modelName, sign);
+        //移除到层，改用mapper替换
         new DaoGenerator().genCode(tableName, modelName, sign);
         new ServiceGenerator().genCode(tableName, modelName, sign);
         new ControllerGenerator().genCode(tableName, modelName, sign);
