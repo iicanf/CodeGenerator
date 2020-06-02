@@ -13,7 +13,7 @@ public class CodeGeneratorMain {
 	private static final String MODEL_NAME = "ITest";
 
 	private static final String[] TABLES = {
-			"mc_order_file"
+			"cal", "channel_apply", "game", "invite", "point", "point_log", "sign_log", "task", "user", "user_ad", "withdraw_apply"
 	};
 
 	/**
