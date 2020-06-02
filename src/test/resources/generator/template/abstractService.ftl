@@ -8,7 +8,6 @@ import org.apache.ibatis.exceptions.TooManyResultsException;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import ${basePackage}.dao.MyMapper;
-import ${basePackage}.dao.Dao;
 
 import tk.mybatis.mapper.entity.Condition;
 
